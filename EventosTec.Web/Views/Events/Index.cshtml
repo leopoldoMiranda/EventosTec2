@@ -1,0 +1,37 @@
+﻿@model IEnumerable<EventosTec.Web.Models.Entities.Event>
+
+@{
+    ViewData["Title"] = "Index";
+}
+    <div class="container">
+
+        <h2 class="text-success text-center">Lista de Eventos</h2>
+        @if (User.IsInRole("Client"))
+        {
+            <p>
+                <a asp-action="Create" class="btn btn-sm btn-success">Nuevo Evento</a>
+            </p>
+        }
+        else if (User.IsInRole("Admin"))
+        {
+            <p>
+                <a asp-action="CreateEvent" class="btn btn-sm btn-success">Nuevo Evento</a>
+            </p>
+        }
+
+        <div class="row col-md-12">
+            <div class="col-md-11 col-md-offset-1">
+                @foreach (var item in Model)
+                {
+
+                    <div class="list-group">
+                        <a href="@Url.Action("Details","Events",new { id=item.Id})" class="list-group-item">
+                            <h4 class="list-group-item-heading"><i class="glyphicon glyphicon-calendar"></i> @item.Name</h4>
+                            <p class="list-group-item-text">@item.EventDate</p>
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>
