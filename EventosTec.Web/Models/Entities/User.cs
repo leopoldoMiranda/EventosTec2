@@ -12,11 +12,14 @@ namespace EventosTec.Web.Models.Entities
         [Display(Name ="Nombre Completo")]
         [MaxLength(150)]
         public string FullName { get; set; }
+
         [Display(Name ="Descripción")]
         [MaxLength(300)]
         public string Description { get; set; }
+
         [Display(Name ="Foto")]
         public string ImgUrl { get; set; }
+
         [Display(Name ="Fecha de Nacimiento")]
         public DateTime? BirthDate { get; set; }
 

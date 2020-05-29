@@ -9,11 +9,14 @@ namespace EventosTec.Web.Models.Entities
     public class City
     {
         public int Id { get; set; }
+
         [Required]
         [Display(Name="Ciudad")]
         public string Name { get; set; }
+
         [Display(Name="Descripción")]
         public string Description { get; set; }
+
         [Display(Name="País")]
         public string Slung { get; set; }
 

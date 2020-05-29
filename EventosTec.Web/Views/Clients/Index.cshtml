@@ -6,7 +6,7 @@
 
     <h5></h5>
 <p class="">
-    <a asp-action="Create" class="btn btn-success btn-sm">Crear cliente</a>
+    <a asp-action="Create" class="btn btn-success btn-md">Crear cliente</a>
 </p>
 <table class="table">
     <thead>
@@ -21,16 +21,16 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
-            <td>@Html.DisplayFor(modelItem => item.User.Email)</td>
+        <tr>                                    <!--item.User.Email-->
+            <td>@Html.DisplayFor(modelItem => item.Address)</td>
             <td>
                 @Html.DisplayFor(modelItem => item.User.PhoneNumber)
             </td>
             <td>@Html.DisplayFor(modelItem => item.Events.Count)</td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success btn-sm">Edit</a>
-                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-success btn-sm">Details</a>
-                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-success btn-sm">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success">Editar</a>
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-success">Detalles</a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-warning">Eliminar</a>
             </td>
         </tr>
 }

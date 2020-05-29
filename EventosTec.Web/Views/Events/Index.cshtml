@@ -9,13 +9,13 @@
         @if (User.IsInRole("Client"))
         {
             <p>
-                <a asp-action="Create" class="btn btn-sm btn-success">Nuevo Evento</a>
+                <a asp-action="Create" class="btn btn-md btn-success">Nuevo Evento</a>
             </p>
         }
         else if (User.IsInRole("Admin"))
         {
             <p>
-                <a asp-action="CreateEvent" class="btn btn-sm btn-success">Nuevo Evento</a>
+                <a asp-action="CreateEvent" class="btn btn-md btn-success">Nuevo Evento</a>
             </p>
         }
 

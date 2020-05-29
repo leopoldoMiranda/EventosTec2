@@ -7,7 +7,7 @@
 <h2></h2>
 
 <p>
-    <a asp-action="Create" class="btn btn-success btn-sm">Nueva Ciudad</a>
+    <a asp-action="Create" class="btn btn-success btn-md">Nueva Ciudad</a>
 </p>
 <table class="table">
     <thead>
@@ -41,13 +41,13 @@
             <td>
                 @if (User.IsInRole("Admin"))
                 {
-                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-success m-1">Editar</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-md btn-success m-1">Editar</a>
                 }
 
-                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-success m-1">Detalle</a>
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-md btn-success m-1">Detalles</a>
                 @if (User.IsInRole("Admin"))
                 {
-                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-success m-1">Eliminar</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-md btn-warning m-1">Eliminar</a>
                 }
 
             </td>
