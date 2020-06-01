@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using EventosTec.Web.Models;
 using EventosTec.Web.Models.Entities;
 using EventosTec.Web.Models.ModelApi;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +15,7 @@ namespace EventosTec.Web.Controllers.API
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]//---agreagado
     public class ClientsController : ControllerBase
     {
         private readonly DataDbContext _context;

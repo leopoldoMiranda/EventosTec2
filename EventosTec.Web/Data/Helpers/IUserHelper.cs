@@ -19,5 +19,7 @@ namespace EventosTec.Web.Data.Helpers
 
         Task<SignInResult> LoginAsync(LoginViewModel model);
         Task LogoutAsync();
+
+        Task<SignInResult> ValidatePasswordAsync(User user, string password);//HECHO
     }
 }
