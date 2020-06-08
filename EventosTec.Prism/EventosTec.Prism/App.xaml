@@ -3,9 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
              x:Class="EventosTec.Prism.App">
-  <Application.Resources>
-
-    <!-- Application resource dictionary -->
-
-  </Application.Resources>
+    <Application.Resources>
+        <ResourceDictionary>
+            <x:String x:Key="UrlAPI">https://localhost:44332</x:String> 
+            <!--<x:String x:Key="UrlAPI">https://192.168.0.5:44394/</x:String> -->
+        </ResourceDictionary>
+    </Application.Resources>
 </prism:PrismApplication>

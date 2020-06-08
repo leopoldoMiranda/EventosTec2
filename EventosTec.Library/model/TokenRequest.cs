@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EventosTec.Library.model
 {
-    class TokenRequest
+    public class TokenRequest
     {
         public string Username { get; set; }
         public string Password { get; set; }

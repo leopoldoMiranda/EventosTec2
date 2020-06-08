@@ -6,6 +6,8 @@ using Xamarin.Essentials.Interfaces;
 using Xamarin.Essentials.Implementation;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using EventosTec.Library.Services;
+
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace EventosTec.Prism
@@ -35,6 +37,11 @@ namespace EventosTec.Prism
             containerRegistry.RegisterForNavigation<NavigationPage>();
             //containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
+            containerRegistry.Register<IApiServices, ApiServices>();//------REALIZADO
         }
+
+
+
+
     }
 }
