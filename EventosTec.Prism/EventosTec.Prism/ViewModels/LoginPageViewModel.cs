@@ -1,5 +1,5 @@
-﻿using EventosTec.Library.model;
-using EventosTec.Library.Service;
+﻿//using EventosTec.Library.model;
+//using EventosTec.Library.Service;
 using ImTools;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -16,14 +16,14 @@ namespace EventosTec.Prism.ViewModels
         private bool isrunning;
         private bool isenabled;
         private DelegateCommand logincommand;
-        private readonly IApiServices apiservice;
+        ///private readonly IApiServices apiservice;
 
-        public LoginPageViewModel(INavigationService navigationService, IApiServices apiServices)
+        public LoginPageViewModel(INavigationService navigationService)//, IApiServices apiServices)
             : base(navigationService)
         {
             Title = "Login";
             IsEnabled = true;
-            apiservice = apiServices;
+            //apiservice  = apiServices;
 
 
         }
@@ -42,7 +42,7 @@ namespace EventosTec.Prism.ViewModels
                 await App.Current.MainPage.DisplayAlert("Error", "Ingrese un Password", "Accept");
                 return;
             }
-
+            /*
             IsRunning = true;
             IsEnabled = false;
             var request = new TokenRequest()
@@ -67,10 +67,11 @@ namespace EventosTec.Prism.ViewModels
                 return;
             }
             var token = (TokenResponse)response.Result;
-
+            */
             await App.Current.MainPage.DisplayAlert("Ok", "Ya entre", "Accept");
         }
 
+        //-----------------------------------------------------
         public string Email { get; set; }
         public string Password
         {
@@ -88,6 +89,6 @@ namespace EventosTec.Prism.ViewModels
             get => isenabled;
             set => SetProperty(ref isenabled, value);
         }
-
+        //-----------------------------------------------------
     }
 }

@@ -6,6 +6,8 @@
   <Application.Resources>
       
         <ResourceDictionary>
+
+          <!--  <x:String x:Key="UrlAPI">https://localhost://192.168.0.5:</x:String> -->
             <x:String x:Key="UrlAPI">https://localhost:44394</x:String>
         </ResourceDictionary>
         <!-- Application resource dictionary -->

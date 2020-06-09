@@ -1,15 +1,14 @@
-using Prism;
-using Prism.Ioc;
+
 using EventosTec.Prism.ViewModels;
 using Prism;
 using Prism.Ioc;
-using EventosTec.Prism.ViewModels;
 using EventosTec.Prism.Views;
 using Xamarin.Essentials.Interfaces;
 using Xamarin.Essentials.Implementation;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using EventosTec.Library.Service;
+using EventosTec.Common.Service;
+using EventosTec.Common.Model;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace EventosTec.Prism
