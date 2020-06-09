@@ -1,5 +1,6 @@
-﻿//using EventosTec.Library.model;
-//using EventosTec.Library.Service;
+﻿using EventosTec.Common.Model;
+using EventosTec.Common.Service;
+using Google.Apis.Auth.OAuth2.Responses;
 using ImTools;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -16,14 +17,14 @@ namespace EventosTec.Prism.ViewModels
         private bool isrunning;
         private bool isenabled;
         private DelegateCommand logincommand;
-        ///private readonly IApiServices apiservice;
+        private readonly IApiServices apiservice;
 
-        public LoginPageViewModel(INavigationService navigationService)//, IApiServices apiServices)
+        public LoginPageViewModel(INavigationService navigationService, IApiServices apiServices)
             : base(navigationService)
         {
             Title = "Login";
             IsEnabled = true;
-            //apiservice  = apiServices;
+            apiservice  = apiServices;
 
 
         }
@@ -42,7 +43,7 @@ namespace EventosTec.Prism.ViewModels
                 await App.Current.MainPage.DisplayAlert("Error", "Ingrese un Password", "Accept");
                 return;
             }
-            /*
+            
             IsRunning = true;
             IsEnabled = false;
             var request = new TokenRequest()
@@ -67,7 +68,7 @@ namespace EventosTec.Prism.ViewModels
                 return;
             }
             var token = (TokenResponse)response.Result;
-            */
+            
             await App.Current.MainPage.DisplayAlert("Ok", "Ya entre", "Accept");
         }
 
