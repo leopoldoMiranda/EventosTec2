@@ -24,4 +24,5 @@
                 Command="{Binding LoginCommand}"/>
     </StackLayout>
 
+
 </ContentPage>

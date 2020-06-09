@@ -1,5 +1,5 @@
 ﻿using EventosTec.Library.model;
-using EventosTec.Library.Services;
+using EventosTec.Library.Service;
 using ImTools;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -15,15 +15,17 @@ namespace EventosTec.Prism.ViewModels
         private string password;
         private bool isrunning;
         private bool isenabled;
-        private DelegateCommand logincommand;//hecho
-        private readonly IApiServices apiservice;//hecho
+        private DelegateCommand logincommand;
+        private readonly IApiServices apiservice;
 
-        public LoginPageViewModel(INavigationService navigationService,IApiServices apiServices)
+        public LoginPageViewModel(INavigationService navigationService, IApiServices apiServices)
             : base(navigationService)
         {
             Title = "Login";
             IsEnabled = true;
-            apiservice = apiServices;//agregado
+            apiservice = apiServices;
+
+
         }
 
         public DelegateCommand LoginCommand => logincommand ?? (logincommand = new DelegateCommand(Login));
@@ -41,7 +43,6 @@ namespace EventosTec.Prism.ViewModels
                 return;
             }
 
-            //----------------agregado---------------
             IsRunning = true;
             IsEnabled = false;
             var request = new TokenRequest()
@@ -66,8 +67,6 @@ namespace EventosTec.Prism.ViewModels
                 return;
             }
             var token = (TokenResponse)response.Result;
-            //------------------------------------------
-
 
             await App.Current.MainPage.DisplayAlert("Ok", "Ya entre", "Accept");
         }
